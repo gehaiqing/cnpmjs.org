@@ -45,9 +45,11 @@ if (config.pagemock) {
 app.use(opensearch);
 app.keys = ['todokey', config.sessionSecret];
 app.proxy = true;
-app.use(proxyToNpm({
-  isWeb: true
-}));
+if(config.enableProxyPackageDetail) {
+  app.use(proxyToNpm({
+    isWeb: true
+  }));
+}
 app.use(bodyParser({ jsonLimit: config.jsonLimit, strict: false }));
 app.use(auth());
 app.use(notFound);

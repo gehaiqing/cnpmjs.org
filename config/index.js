@@ -80,9 +80,7 @@ var config = {
   // default system admins
   admins: {
     // name: email
-    fengmk2: 'fengmk2@gmail.com',
-    admin: 'admin@cnpmjs.org',
-    dead_horse: 'dead_horse@qq.com',
+    gehaiqing: 'fengmk2@gmail.com',
   },
 
   // email notification for errors
@@ -102,7 +100,7 @@ var config = {
   adBanner: '',
   customReadmeFile: '', // you can use your custom readme file instead the cnpm one
   customFooter: '', // you can add copyright and site total script html here
-  npmClientName: 'cnpm', // use `${name} install package`
+  npmClientName: 'npm', // use `${name} install package`
   packagePageContributorSearch: true, // package page contributor link to search, default is true
 
   // max handle number of package.json `dependencies` property
@@ -115,13 +113,13 @@ var config = {
    */
 
   database: {
-    db: 'cnpmjs_test',
+    db: 'cnpmjs',
     username: 'root',
-    password: '',
+    password: '123456',
 
     // the sql dialect of the database
     // - currently supported: 'mysql', 'sqlite', 'postgres', 'mariadb'
-    dialect: 'sqlite',
+    dialect: 'mysql',
 
     // custom host; default: 127.0.0.1
     host: '127.0.0.1',
@@ -174,7 +172,7 @@ var config = {
   enablePrivate: false,
 
   // registry scopes, if don't set, means do not support scopes
-  scopes: [ '@cnpm', '@cnpmtest', '@cnpm-test' ],
+  scopes: [ '@hxq' ],
 
   // some registry already have some private packages in global scope
   // but we want to treat them as scoped private packages,
@@ -289,6 +287,8 @@ var config = {
     enable: false,
     connectOptions: null,
   },
+  /** 是否允许包详情代理到npm, 而不使用私有地址 */ 
+  enableProxyPackageDetail: false
 };
 
 if (process.env.NODE_ENV === 'test') {
