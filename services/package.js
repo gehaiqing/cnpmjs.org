@@ -144,6 +144,18 @@ exports.listModules = function* (names) {
   return rows;
 };
 
+/**
+ * 显示所有的模块
+ */
+exports.listAllModules = function* () {
+  var rows = yield Module.findAll({
+    attributes: [
+      'name', 'description', 'version',
+    ]
+  });
+  return rows;
+};
+
 exports.listModulesByUser = function* (username) {
   var names = yield exports.listModuleNamesByUser(username);
   return yield exports.listModules(names);
