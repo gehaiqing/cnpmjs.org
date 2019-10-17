@@ -1,23 +1,23 @@
 
-## Registry
+## 总览
 
 <div class="ant-table">
 <table class="downloads">
   <tbody>
     <tr>
-      <td class="count" id="total-packages"></td><td>total packages</td>
-      <td class="count" id="total-versions"></td><td>total package versions</td>
-      <td class="count" id="total-deletes"></td><td>total delete packages</td>
+      <td class="count" id="total-packages"></td><td>总数</td>
+      <td class="count" id="total-versions"></td><td>总版本数</td>
+      <td class="count" id="total-deletes"></td><td>总删除数</td>
     </tr>
     <tr>
-      <td class="count"></td><td> downloads today</td>
-      <td class="count"></td><td> downloads in this week</td>
-      <td class="count"></td><td> downloads in this month</td>
+      <td class="count"></td><td> 今日下载量</td>
+      <td class="count"></td><td> 本周下载量</td>
+      <td class="count"></td><td> 本月下载量</td>
     </tr>
     <tr>
-      <td class="count"></td><td> downloads in the last day</td>
-      <td class="count"></td><td> downloads in the last week</td>
-      <td class="count"></td><td> downloads in the last month</td>
+      <td class="count"></td><td> 昨日下载量</td>
+      <td class="count"></td><td> 上周下载量</td>
+      <td class="count"></td><td> 上月下载量</td>
     </tr>
   </tbody>
 </table>
