@@ -93,7 +93,9 @@ $ npm install [name]
   $ npm login
   #会提示输入帐号、密码、邮箱
   ```
-+ 初始化项目
++ 初始化项目  
+  
+  ***包名使用`@hxq`作为域控制，例如：@hxq/utils***
   ```bash
   $ npm init
   ```
