@@ -2,7 +2,7 @@
 
 var debug = require('debug')('cnpmjs.org:middleware:proxy_to_npm');
 var config = require('../config');
-
+var packageService = require('../services/package')
 module.exports = function (options) {
   var redirectUrl = config.sourceNpmRegistry;
   var proxyUrls = [
@@ -41,6 +41,16 @@ module.exports = function (options) {
     }
 
     var pathname =  decodeURIComponent(this.path);
+
+    /**
+     * 默认的同步模式none, 下载时会将所有的包链接跳转到`sourceNpmRegistry`
+     * 更改为，先查本地数据库，如果是本地的就从本地下载，否则再从`sourceNpmRegistry`下载
+     * 2019.10.17
+     */
+    var localPackage = yield packageService.getLatestModule(pathname.substring(1, pathname.length))
+    if(localPackage) {
+      return yield next;
+    }
 
     var isScoped = false;
     var isPublichScoped = false;
