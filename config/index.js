@@ -80,7 +80,7 @@ var config = {
   // default system admins
   admins: {
     // name: email
-    gehaiqing: 'fengmk2@gmail.com',
+    admin: 'admin@123.com'
   },
 
   // email notification for errors
@@ -96,9 +96,9 @@ var config = {
     }
   },
 
-  logoURL: 'https://os.alipayobjects.com/rmsportal/oygxuIUkkrRccUz.jpg', // cnpm logo image url
+  logoURL: '', // cnpm logo image url
   adBanner: '',
-  customReadmeFile: '', // you can use your custom readme file instead the cnpm one
+  customReadmeFile: 'docs/web/hxq_readme.md', // you can use your custom readme file instead the cnpm one
   customFooter: '', // you can add copyright and site total script html here
   npmClientName: 'npm', // use `${name} install package`
   packagePageContributorSearch: true, // package page contributor link to search, default is true
