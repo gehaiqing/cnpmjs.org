@@ -169,7 +169,7 @@ var config = {
   // enable private mode or not
   // private mode: only admins can publish, other users just can sync package from source npm
   // public mode: all users can publish
-  enablePrivate: false,
+  enablePrivate: true,
 
   // registry scopes, if don't set, means do not support scopes
   scopes: [ '@hxq' ],
