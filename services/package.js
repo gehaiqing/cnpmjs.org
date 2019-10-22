@@ -148,7 +148,19 @@ exports.listModules = function* (names) {
  * 显示所有的模块
  */
 exports.listAllModules = function* () {
+  var tags = yield Tag.findAll();
+  if (tags.length === 0) {
+    return [];
+  }
+
+  var ids = tags.map(function (tag) {
+    return tag.module_id;
+  });
+
   var rows = yield Module.findAll({
+    where: {
+      id: ids
+    },
     attributes: [
       'name', 'description', 'version',
     ]
