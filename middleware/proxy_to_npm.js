@@ -47,7 +47,9 @@ module.exports = function (options) {
      * 更改为，先查本地数据库，如果是本地的就从本地下载，否则再从`sourceNpmRegistry`下载
      * 2019.10.17
      */
-    var localPackage = yield packageService.getLatestModule(pathname.substring(1, pathname.length))
+    // 避免非私有域下的跳转
+    var pathArray = pathname.split('/')
+    var localPackage = yield packageService.getLatestModule(pathArray[pathArray.length-1])
     if(localPackage) {
       return yield next;
     }
